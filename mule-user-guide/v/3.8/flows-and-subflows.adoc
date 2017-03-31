@@ -37,7 +37,7 @@ When its execution is triggered by another flow in an application, a flow exists
 
 [cols="10,40,50"]
 |===
-|*1* |*Subflow* |A subflow processes messages *synchronously* (relative to the flow that triggered its execution) and always inherits both the processing strategy and exception strategy employed by the triggering flow. While a subflow is running, processing on the triggering flow pauses, then resumes only after the subflow completes its processing and hands the message back to the triggering flow. 
+|*1* |*Subflow* |A subflow processes messages *synchronously*, relative to the flow that triggered its execution. It has no processing strategy or exception strategy of its own, and is treated the same as if its member components were directly added to the triggering flow. A subflow can only be triggred from a flow-ref, and can not have an inbound endpoint.
 |*2* |*Synchronous Flow* a|
 A synchronous flow, like a subflow, processes messages *synchronously* (relative to the flow that triggered its execution). While a synchronous flow is running, processing on the triggering flow pauses, then resumes only after the synchronous flow completes its processing and hands the message back to the triggering flow. However, unlike a subflow, this type of flow _does not_ inherit processing or exception strategies from the triggering flow.
 
