@@ -436,7 +436,7 @@ filtered: {
 === Using Remove on an Array
 .(':array', ':name')  => ':array'
 
-When running it on an array, it returns another array where the specified indexes are removed.
+When running it on an array, it returns another array where the specified value is removed.
 
 .Transform
 [source,DataWeave, linenums]
@@ -445,7 +445,7 @@ When running it on an array, it returns another array where the specified indexe
 %output application/json
 ---
 {
-  aa: ["a", "b", "c"] - 1
+  aa: ["a", "b", "c"] - "b"
 }
 ----
 
@@ -453,7 +453,7 @@ When running it on an array, it returns another array where the specified indexe
 [source,json,linenums]
 ----
 {
-  "aa": [a, c]
+  "aa": ["a", "c"]
 }
 ----
 
